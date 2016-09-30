@@ -1,0 +1,27 @@
+@import 'settings';
+@import 'foundation-emails';
+
+h1,h2,h3,h4,h5,h6 {
+    font-family:gil;
+}
+body, p {
+   font-family: futuraLight;
+   font-size: $global-font-size;
+}
+
+.blue {
+   color: $primary-color;
+}
+
+.primary-background {
+    background-color: $primary-color;
+    width: 100%;
+
+    img {
+        margin: 0 auto;
+    }
+}
+
+.clouds-title {
+    color: $primary-color;
+}

@@ -1,0 +1,12 @@
+<row>
+  <columns small="12" large="6">
+    <h5>
+      \{{ tracker.carrier.airline.code }}\{{ tracker.carrier.number }} {% trans 'of' %} \{{ tracker.carrier.airline.name }}
+    </h5>
+  </columns>
+  <columns small="12" large="6">
+    <h6 class="text-right">
+      \{{ tracker.carrier.flight.get_status_display }}
+    </h6>
+  </columns>
+</row>

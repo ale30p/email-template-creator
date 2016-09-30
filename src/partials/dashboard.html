@@ -1,0 +1,87 @@
+<row>
+  <columns small="6" large="6">
+    <h6>{% trans 'Departure' %} · \{{ tracker.carrier.flight.origin.city }}, \{{ tracker.carrier.flight.origin.country_code }}</h6>
+    <row>
+      <columns small="12" large="6">
+          <strong>
+            \{{ tracker.carrier.flight.departure_local_time|date:user.get_profile.get_date_format_web }}
+          </strong>
+      </columns>
+      <columns small="12" large="6">
+          <strong>
+            \{{ tracker.carrier.flight.departure_local_time|time:user.get_profile.get_time_format }}
+            \{{ tracker.carrier.flight.origin.country_code }}T
+          </strong>
+      </columns>
+    </row>
+    <row>
+      <columns small="6" large="6">
+          {% trans 'Gate' %}
+      </columns>
+      <columns small="6" large="6">
+          <strong class="blue">\{{ tracker.carrier.flight.departure_gate|default_if_none:"-" }}</strong>
+      </columns>
+    </row>
+    <row>
+      <columns small="6" large="6">
+          Term
+      </columns>
+      <columns small="6" large="6">
+          <strong class="blue">\{{ tracker.carrier.flight.departure_terminal|default_if_none:"-" }}</strong>
+      </columns>
+    </row>
+  </columns>
+
+  <columns small="6" large="6">
+      <h6>{% trans 'Arrival' %} · \{{ tracker.carrier.flight.destination.city }}, \{{ tracker.carrier.flight.destination.country_code }}</h6>
+      <row>
+          <columns small="12" large="6">
+              <strong>
+                \{{ tracker.carrier.flight.arrival_local_time|date:user.get_profile.get_date_format_web }}
+              </strong>
+          </columns>
+          <columns small="12" large="6">
+              <strong>
+                \{{ tracker.carrier.flight.arrival_local_time|time:user.get_profile.get_time_format }}
+                {% if tracker.carrier.flight.diverted_airport %}
+                    \{{ tracker.carrier.flight.diverted_airport.country_code }}T
+                {% else %}
+                    \{{ tracker.carrier.flight.destination.country_code }}T
+                {% endif %}
+              </strong>
+          </columns>
+      </row>
+      <row>
+          <columns small="6" large="6">
+              {% trans 'Gate' %}
+          </columns>
+          <columns small="6" large="6">
+              <strong class="blue">
+                \{{ tracker.carrier.flight.arrival_gate|default_if_none:"-" }}
+              </strong>
+          </columns>
+      </row>
+      <row>
+          <columns small="6" large="6">
+              Term
+          </columns>
+          <columns small="6" large="6">
+              <strong class="blue">
+                \{{ tracker.carrier.flight.arrival_terminal|default_if_none:"-" }}
+              </strong>
+          </columns>
+      </row>
+      {% with tracker.carrier.flight.baggage as baggage %}
+          {% if baggage %}
+              <row>
+                  <columns small="6">
+                      {% trans 'Baggage' %}
+                  </columns>
+                  <columns>
+                      <strong class="blue">\{{ baggage|default_if_none:"-" }}</strong>
+                  </columns>
+              </row>
+          {% endif %}
+      {% endwith %}
+  </columns>
+</row>

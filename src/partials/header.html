@@ -1,0 +1,21 @@
+<row class="primary-background">
+  <columns small="8" large="8" class="primary-background">
+      <spacer size="30"></spacer>
+
+        {% if HOSTNAME_PROTOCOL %}
+           <a href="\{{ HOSTNAME_PROTOCOL }}">
+              <img src="\{{ HOSTNAME_PROTOCOL }}{% static 'images/logo.png' %}">
+           </a>
+        {% else %}
+           <a href="\{{ protocol }}://\{{ domain }}">
+              <img src="\{{ protocol }}://\{{ domain }}{% static 'images/logo.png' %}">
+           </a>
+        {% endif %}
+  </columns>
+
+  <columns small="4" large="4">
+    <spacer size="30"></spacer>
+
+    {{> social_icons }}
+  </columns>
+</row>

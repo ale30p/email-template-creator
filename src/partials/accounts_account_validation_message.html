@@ -1,0 +1,30 @@
+<row>
+  <columns small="12" large="12">
+
+    <spacer size="10"></spacer>
+
+    <callout class="primary">
+      <h2>
+        <strong>\{{ name }}, {% trans "please confirm your FlyersConcierge account" %}</strong>
+      </h2>
+
+      <h3>
+        {% blocktrans %}Confirming your account will give you full access to <b>FlyersConcierge</b> and all future notifications will be sent to this email address.{% endblocktrans %} {% if password %}
+      </h3>
+
+      <h3>
+        {% trans "Password" %}: \{{ password }}</p>{% endif %}
+      </h3>
+    </callout>
+
+    <button href="\{{ HOSTNAME_PROTOCOL }}/accounts/validate/\{{id}}/\{{hash}}" class="">
+      {% trans "Confirm registration" %}
+    </button>
+
+    <callout class="secondary">
+      {% trans 'Or copy paste this code:' %}
+      <br>
+      \{{ HOSTNAME_PROTOCOL }}/accounts/validate/\{{id}}/\{{hash}}
+    </callout>
+  </columns>
+</row>

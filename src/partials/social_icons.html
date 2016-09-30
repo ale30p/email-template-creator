@@ -1,0 +1,71 @@
+{% if HOSTNAME_PROTOCOL %}
+    <row class="text-right">
+        <columns small="1" large="1">
+            <a href="https://www.facebook.com/flyersconcierge">
+                <img src="\{{ HOSTNAME_PROTOCOL }}/static/images/social-icons/face.png">
+            </a>
+        </columns>
+        <columns small="1" large="1">
+            <a href="https://twitter.com/flyersconcierge">
+                <img src="\{{ HOSTNAME_PROTOCOL }}/static/images/social-icons/twitter.png">
+            </a>
+        </columns>
+        <columns small="1" large="1">
+            <a href="https://google.com/+Flyersconcierge">
+                <img src="\{{ HOSTNAME_PROTOCOL }}/static/images/social-icons/g+.png">
+            </a>
+        </columns>
+    </row>
+    <row>
+        <columns small="1" large="1">
+            <a href="http://blog.flyersconcierge.com/">
+                <img src="\{{ HOSTNAME_PROTOCOL }}/static/images/social-icons/wordpress.png">
+            </a>
+        </columns>
+        <columns small="1" large="1">
+            <a href="https://linkedin.com/company/flyersconcierge">
+                <img src="\{{ HOSTNAME_PROTOCOL }}/static/images/social-icons/linkedin.png">
+            </a>
+        </columns>
+        <columns small="1" large="1">
+            <a href="https://youtube.com/c/Flyersconcierge">
+                <img src="\{{ HOSTNAME_PROTOCOL }}/static/images/social-icons/youtube.png">
+            </a>
+        </columns>
+    </row>
+{% else %}
+    <row>
+        <columns small="1" large="1">
+            <a href="https://www.facebook.com/flyersconcierge">
+                <img src="\{{ protocol }}://\{{ domain }}/static/images/social-icons/face.png">
+            </a>
+        </columns>
+        <columns small="1" large="1">
+            <a href="https://twitter.com/flyersconcierge">
+                <img src="\{{ protocol }}://\{{ domain }}/static/images/social-icons/twitter.png">
+            </a>
+        </columns>
+        <columns small="1" large="1">
+            <a href="https://google.com/+Flyersconcierge">
+                <img src="\{{ protocol }}://\{{ domain }}/static/images/social-icons/g+.png">
+            </a>
+        </columns>
+    </row>
+    <row>
+        <columns small="1" large="1">
+            <a href="http://blog.flyersconcierge.com/">
+                <img src="\{{ protocol }}://\{{ domain }}/static/images/social-icons/wordpress.png">
+            </a>
+        </columns>
+        <columns small="1" large="1">
+            <a href="https://linkedin.com/company/flyersconcierge">
+                <img src="\{{ protocol }}://\{{ domain }}/static/images/social-icons/linkedin.png">
+            </a>
+        </columns>
+        <columns small="1" large="1">
+            <a href="https://youtube.com/c/Flyersconcierge">
+                <img src="\{{ protocol }}://\{{ domain }}/static/images/social-icons/youtube.png">
+            </a>
+        </columns>
+    </row>
+{% endif %}

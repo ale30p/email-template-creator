@@ -1,0 +1,19 @@
+<row>
+  <columns small="12" large="12">
+    <br>
+    <callout class="secondary">
+      <h2>
+        {% if recipient.identity == user.email %}
+          {% trans "Dear" %} \{{ user.get_full_name_or_email }}:
+          <br>
+        {% endif %}
+      </h2>
+
+      <h3>
+        {% autoescape off %}
+          \{{ message }}
+        {% endautoescape %}
+      </h3>
+    </callout>
+  </columns>
+</row>

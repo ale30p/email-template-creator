@@ -1,0 +1,23 @@
+<row>
+  <columns small="3" large="3">
+      {% if HOSTNAME_PROTOCOL %}
+         <img src="\{{ HOSTNAME_PROTOCOL }}/static/images/email/cloud_left.jpg">
+      {% else %}
+         <img src="\{{ protocol }}://\{{ domain }}/static/images/email/cloud_left.jpg">
+      {% endif %}
+  </columns>
+  <columns small="6" large="6">
+      <spacer size="30"></spacer>
+
+      <h1 class="clouds-title text-center"><strong>{% trans 'Download the App for free!' %}</strong></h1>
+
+      {{> market_badges }}
+  </columns>
+  <columns small="3" large="3">
+      {% if HOSTNAME_PROTOCOL %}
+         <img src="\{{ HOSTNAME_PROTOCOL }}/static/images/email/cloud_right.jpg">
+      {% else %}
+         <img src="\{{ protocol }}://\{{ domain }}/static/images/email/cloud_right.jpg">
+      {% endif %}
+  </columns>
+</row>

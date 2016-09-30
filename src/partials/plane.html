@@ -1,0 +1,38 @@
+<row>
+  <columns small="12" large="12">
+    <table>
+          <tr>
+              <td>
+                \{{ tracker.carrier.flight.origin.code }}
+                <span style="display: inline-block;content: ' ';border-radius: 100% !important;-moz-border-radius: 100% !important;background-color: #9e9e9e;width: 7px;height: 7px;vertical-align: middle;"></span>
+              </td>
+              <td>
+                  <span style="display: inline-block;content: ' ';width: \{{ tracker.carrier.flight.percentage_route_before }}px;margin-left: 0px;left: -9px;right: 0;z-index: 0;top: 50%;"></span>
+              </td>
+              <td>
+                  <img src="\{{ HOSTNAME_PROTOCOL }}/static/images/avion.png" style="max-width: 23px; width:23px;display: flex;">
+              </td>
+              <td>
+                  <span style="display: inline-block;content: ' ';width: \{{ tracker.carrier.flight.percentage_route_after }}px;margin-left: 0px;left: -9px;right: 0;z-index: 0;top: 50%;"></span>
+              </td>
+              <td>
+                <span style="display: inline-block;;content: ' ';border-radius: 100% !important;-moz-border-radius: 100% !important;background-color: #9e9e9e;width: 7px;height: 7px;vertical-align: middle;"></span>
+                \{{ tracker.carrier.flight.destination.code }}
+              </td>
+          </tr>
+          <tr>
+
+          </tr>
+      </table>
+  </columns>
+</row>
+
+<row>
+  <columns small="12" large="12">
+    <h5>
+      <center>
+        {% trans 'Duration' %}: \{{ tracker.carrier.flight.duration|to_hours_and_minutes }} (\{{ tracker.carrier.flight.percentage|floatformat }}%)
+      </center>
+    </h5>
+  </columns>
+</row>
