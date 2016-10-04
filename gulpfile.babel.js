@@ -34,8 +34,8 @@ gulp.task('litmus',
   gulp.series('build', creds, aws, litmus));
 
 // Build emails, then zip
-gulp.task('zip',
-  gulp.series('build', zip));
+/*gulp.task('zip',
+  gulp.series('build', zip));*/
 
 // Delete the "dist" folder
 // This happens every time a build starts
